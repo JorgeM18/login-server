@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const WebSDK = require('@loginid/node-sdk').default;
+const ServerSDK = require('@loginid/node-sdk').default;
 require('dotenv').config();
 
 const PORT = process.env.PORT || 8080;
@@ -10,7 +10,7 @@ const {
   AUTH_CLIENT_ID,
 } = process.env;
 
-const lAdmin = new WebSDK(AUTH_CLIENT_ID, LOGID_PRIVATE_KEY, AUTH_BASE_URL);
+const lAdmin = new ServerSDK(AUTH_CLIENT_ID, LOGID_PRIVATE_KEY, AUTH_BASE_URL);
 const app = express();
 
 app.use(cors());
